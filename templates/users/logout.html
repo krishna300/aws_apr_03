@@ -1,0 +1,17 @@
+
+
+
+{% extends 'blog/base.html' %} 
+{% load crispy_forms_tags %} 
+{% block context %}
+<h2>
+  LogOut
+</h2>
+You have been Logged Out
+<h1>
+
+    <a href="{% url 'login'%}">LOgin again</a>
+
+</h1>
+
+{% endblock %}

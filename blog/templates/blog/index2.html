@@ -1,0 +1,106 @@
+
+
+{% extends 'blog/base.html' %} 
+
+
+{% block context %}
+  
+
+<h2>In index !</h2>
+
+<div class="container1">        
+
+<div class="right">
+    <!-- '{% url 'a1' %}'>a1 -->
+    <ul>
+    <li><a href='{% url 'a1' %}'>a1</a></li>
+    <li><a href='{% url 'a2' %}'>a2</a></li>
+    <li><a href='{% url 'a3' %}'>a3</a></li>
+    <li><a href='{% url 'a4' %}'>a4</a></li>
+    <li><a href=''></a></li>   
+    </ul></div>
+
+<div class="left"> 
+    <h2>using handmade views</h2>
+    <ul>
+    <li><a href='{% url 'create'%}'>create</a></li>
+    <li><a href='{% url 'list'%}'>list</a></li>
+    <li><a href=''></a></li>
+    <li><a href=''></a></li>
+    <li><a href=''></a></li>   
+    </ul></div>
+
+
+    <div class="c1"> 
+        <h2>using generic views</h2>
+        <ul>
+        <li><a href='{% url 'create'%}'>buss</a></li>
+        <li><a href='listGeneric'>listGeneric</a></li>
+        <li><a href=''></a></li>
+        <li><a href=''></a></li>
+        <li><a href=''></a></li>   
+        </ul></div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+
+{% block styler %}
+
+
+
+<style>
+
+    *{
+        box-sizing: border-box;
+        margin:0;
+        padding: 0;
+    }
+
+    a{
+        text-decoration: none;
+        
+    }
+
+    ul{
+        list-style: none;
+    }
+    .container1{
+        margin: auto;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        height: 70vh;
+        gap: 10px;
+    }
+
+    .right,.left,.c1{
+        border: 1px solid #ddd;
+        background-color: aqua;
+        height: 100%;
+        padding: 16px;
+        overflow: auto;
+        border-radius: 13px;
+
+    }
+
+    ul li a{
+        display: inline-block;
+        padding-bottom: 17px !important;
+        font-size: 21px;
+    }
+
+    .container1 h2{
+        border-bottom: 1px dotted black;
+        margin-bottom: 10px;
+    }
+</style>
+
+
+
+{% endblock %}
+

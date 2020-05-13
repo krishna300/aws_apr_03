@@ -1,0 +1,31 @@
+
+
+
+
+{% extends 'blog/base.html' %} 
+
+{% load crispy_forms_tags %} 
+
+{% block context %}
+
+{% if user.profile.image %}
+<img src="{{user.profile.image.url}}" alt="">
+
+{% else %}
+
+<img src="../media/default.jpg" alt="">
+{% endif %}
+
+<h2>
+  Profile Info Update
+</h2>
+
+<form  method="POST" enctype="multipart/form-data" >
+  {% csrf_token %} 
+  {{u_form|crispy }}
+  {{p_form|crispy }}
+
+  <input type="submit" name='submit' value="Update !">
+</form>
+
+{% endblock %}

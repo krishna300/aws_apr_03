@@ -1,0 +1,66 @@
+
+
+
+{% extends 'blog/base.html' %} 
+
+
+{% block styler %}
+<style>
+
+    .postbox{
+        margin: auto;
+        max-width: 700px;
+        background-color: rgb(101, 107, 94);
+        padding: 25px;
+        border-radius: 10px;
+       
+
+    }
+.post{
+    background-color: rgb(255, 255, 255);
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.post i{
+    display: none;
+    position: absolute;
+    right:30px;
+    top:30px;
+}
+.post:hover > a i{
+
+    display:inline-block;
+}
+
+
+</style>
+
+{% endblock%}
+{% block context %}
+
+<h2>
+  this is to list all posts
+</h2>
+
+<div class="postbox">
+
+    {% for post in posts %}
+    <div class="post">
+        <h2>{{post.title}}</h2>
+        <p>{{post.description}}</p>
+        
+        <a href='{% url 'update' post.id %}'>
+
+            <i class="fas fa-pencil-alt fa-2x"></i>
+
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}
